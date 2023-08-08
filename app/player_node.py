@@ -1,3 +1,4 @@
+from __future__ import annotations
 from app.player import Player
 
 
@@ -25,3 +26,12 @@ class PlayerNode:
     def key(self, player: Player):
         return player.get_unique_id()
 
+    # sets next node
+    @next.setter
+    def next(self, player_node: PlayerNode):
+        self._next = player_node
+
+    # sets previous node
+    @previous.setter
+    def previous(self, player_node: PlayerNode):
+        self._previous = player_node
