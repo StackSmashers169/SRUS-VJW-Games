@@ -40,8 +40,27 @@ class PlayerList:
         if self.head is None:
             raise Exception("List is empty")
 
+        self.head = self.head.next
+
     def remove_tail(self):
         """ if tail is empty then raise empty list exception"""
-        if self.tail is None:
+        if self.head is None:
             raise Exception("List is empty")
+
+        """if the list only has 1 node remove it then return"""
+        if self.head.next is None:
+            self.head = None
+            return
+
+        self.tail = self.tail.previous
+
+    def remove_specific_node(self, player_node: PlayerNode):
+        """removes a node from anywhere in the list"""
+        if self.head is None:
+            raise Exception("List is Empty")
+
+        """if the list only has 1 node remove it then return"""
+        if self.head.next is None:
+            self.head = None
+            return
 
