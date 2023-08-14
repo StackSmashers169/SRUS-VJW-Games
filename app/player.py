@@ -1,16 +1,18 @@
 
 class Player:
     def __init__(self, unique_id: str, player_name: str):
-        self.unique_id = unique_id
-        self.player_name = player_name
+        self._key = unique_id
+        self._player_name = player_name
 
     def __str__(self):
-        return f'Player name: {self.player_name}, Player UID: {self.unique_id}'
+        return f'Player name: {self.player_name}, Player UID: {self.key}'
 
-    def get_unique_id(self):
-        return self.unique_id
+    @property
+    def key(self):
+        return self._key
 
-    def get_player_name(self):
-        return self.player_name
+    @property
+    def player_name(self):
+        return self._player_name
 
 

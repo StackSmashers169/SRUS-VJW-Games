@@ -9,10 +9,10 @@ class PlayerNode:
         self._previous = None
 
     def __str__(self):
-        return f'Current player name: {self._player.get_player_name()}, ID: {self._player.get_unique_id()}'
+        return f'Current player name: {self.player_name()}, ID: {self.key()}'
 
-    def get_player_info(self, player: Player):
-        return str(player)
+    def player_name(self):
+        return self._player.player_name
 
     @property
     def next(self):
@@ -22,9 +22,9 @@ class PlayerNode:
     def previous(self):
         return self._previous
 
-    # returns current player's unique id
-    def key(self, player: Player):
-        return player.get_unique_id()
+    # obtains player id
+    def key(self):
+        return self._player.key
 
     # sets next node
     @next.setter
