@@ -52,3 +52,13 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(removed_node, self.test_node_101)
         self.assertEqual(self.test_node_71.next, self.test_node_14)
         self.assertEqual(self.test_node_14.previous, self.test_node_71)
+
+    def test_remove_tail(self):
+        self.test_list.append_tail(self.test_node_101)
+        self.test_list.append_tail(self.test_node_71)
+        self.test_list.append_tail(self.test_node_14)
+
+        removed_node = self.test_list.remove_tail()
+        self.assertEqual(removed_node, self.test_node_14)
+        self.assertEqual(self.test_node_71.previous, self.test_node_101)
+        self.assertEqual(self.test_node_101.next, self.test_node_71)
