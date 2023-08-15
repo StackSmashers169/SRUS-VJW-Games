@@ -38,7 +38,7 @@ class PlayerList:
         if head is empty then raise empty list exception"""
 
         if self.head is None:
-            raise Exception("List is empty")
+            raise IndexError("List is empty")
 
         if self.head.next is None:
             removed_node = self.head
@@ -52,7 +52,7 @@ class PlayerList:
     def remove_tail(self):
         """removes tail and returns removed tail.  If tail is empty then raise empty list exception"""
         if self.head is None:
-            raise Exception("List is empty")
+            raise IndexError("List is empty")
 
         """if the list only has 1 node remove it then return"""
         if self.head.next is None:
@@ -71,7 +71,7 @@ class PlayerList:
         """
 
         if self.head is None:
-            raise Exception("List is empty")
+            raise IndexError("List is empty")
 
         """traverse the list until you reach a node that has a matching key"""
         current_player = self.head
