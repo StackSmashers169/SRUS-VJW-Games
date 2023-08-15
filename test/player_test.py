@@ -73,4 +73,3 @@ class TestPlayer(unittest.TestCase):
 
         removed_71 = self.test_list.remove_specific_node('71')
         self.assertEqual(removed_71, self.test_node_71)
-        

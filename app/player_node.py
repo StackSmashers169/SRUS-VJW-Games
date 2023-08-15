@@ -9,7 +9,7 @@ class PlayerNode:
         self._previous = None
 
     def __str__(self):
-        return f'Current player name: {self.player_name()}, ID: {self.key()}'
+        return f'Current player name: {self.player_name}, ID: {self.key}'
 
     @property
     def player_name(self):

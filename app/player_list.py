@@ -7,6 +7,10 @@ class PlayerList:
         self.head: Optional[Any] = None
         self.tail: Optional[Any] = None
 
+        if player_list:
+            for player_node in player_list:
+                self.append_head(player_node)
+
     def append_head(self, player_node: PlayerNode):
 
         """set new player node as new head and tail if list is empty"""
@@ -56,13 +60,13 @@ class PlayerList:
 
         """if the list only has 1 node remove it then return"""
         if self.head.next is None:
-            temp_node = self.tail
+            removed_node = self.tail
             self.remove_head()
-            return temp_node
+            return removed_node
 
-        temp_node = self.tail
+        removed_node = self.tail
         self.tail = self.tail.previous
-        return temp_node
+        return removed_node
 
     def remove_specific_node(self, key: str):
         """
@@ -94,3 +98,14 @@ class PlayerList:
         """if we reached here, then that means no key was found"""
         return None
 
+    def display(self, forward=True):
+        if forward:
+            current_node = self.head
+            while current_node is not None:
+                print(str(current_node))
+                current_node = current_node.next
+        else:
+            current_node = self.tail
+            while current_node is not None:
+                print(str(current_node))
+                current_node = current_node.previous
