@@ -11,6 +11,7 @@ class PlayerNode:
     def __str__(self):
         return f'Current player name: {self.player_name()}, ID: {self.key()}'
 
+    @property
     def player_name(self):
         return self._player.player_name
 
@@ -23,6 +24,7 @@ class PlayerNode:
         return self._previous
 
     # obtains player id
+    @property
     def key(self):
         return self._player.key
 

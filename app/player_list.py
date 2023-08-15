@@ -80,7 +80,7 @@ class PlayerList:
                 removed_node = self.head
                 self.remove_head()
                 return removed_node
-            elif key == self.tail.key():
+            elif key == self.tail.key:
                 removed_node = self.tail
                 self.remove_tail()
                 return removed_node
