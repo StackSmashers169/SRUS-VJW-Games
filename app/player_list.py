@@ -9,7 +9,6 @@ class PlayerList:
 
     def append_head(self, player_node: PlayerNode):
 
-
         """set new player node as new head and tail if list is empty"""
         if self.head is None:
             self.head = player_node
