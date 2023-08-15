@@ -26,6 +26,7 @@ class PlayerList:
         """if linked list is empty, then set head and tail as new player node"""
         if self.head is None:
             self.append_head(player_node)
+
         else:
             """make new_player_node.next point to current tail, the current head next is none"""
             player_node.previous = self.tail
