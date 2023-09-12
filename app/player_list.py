@@ -4,8 +4,8 @@ from app.player_node import PlayerNode
 
 class PlayerList:
     def __init__(self, player_list: List[Any] = None):
-        self.head: Optional[Any] = None
-        self.tail: Optional[Any] = None
+        self.head: Optional[PlayerNode] = None
+        self.tail: Optional[PlayerNode] = None
 
         if player_list:
             for player_node in player_list:

@@ -1,4 +1,7 @@
 import unittest
+
+import argon2.exceptions
+
 from app.player import Player
 from app.player_node import PlayerNode
 from app.player_list import PlayerList
@@ -6,9 +9,9 @@ from app.player_list import PlayerList
 
 class TestPlayer(unittest.TestCase):
     def setUp(self):
-        self.test_player_14 = Player('14', 'Soren')
-        self.test_player_101 = Player('101', 'Bryden')
-        self.test_player_71 = Player('71', 'Stuart')
+        self.test_player_14 = Player('14', 'Soren', 'I_remembered_it')
+        self.test_player_101 = Player('101', 'Bryden', 'I_forgot_it')
+        self.test_player_71 = Player('71', 'Stuart', 'I_didnt_even_care')
         self.test_node_14 = PlayerNode(self.test_player_14)
         self.test_node_101 = PlayerNode(self.test_player_101)
         self.test_node_71 = PlayerNode(self.test_player_71)
@@ -73,3 +76,11 @@ class TestPlayer(unittest.TestCase):
 
         removed_71 = self.test_list.remove_specific_node('71')
         self.assertEqual(removed_71, self.test_node_71)
+
+    def test_correct_password(self):
+        verification = self.test_player_14.verify_password('I_remembered_it')
+        self.assertIs(verification, True)
+
+    def test_incorrect_password(self):
+        verification = self.test_player_71.verify_password('I_remembered_it')
+        self.assertIs(verification, False)
