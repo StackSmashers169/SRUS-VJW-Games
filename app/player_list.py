@@ -110,3 +110,5 @@ class PlayerList:
             while current_node is not None:
                 print(str(current_node))
                 current_node = current_node.previous
+
+

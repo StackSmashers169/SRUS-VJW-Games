@@ -81,3 +81,4 @@ class TestPlayer(unittest.TestCase):
     def test_incorrect_password(self):
         verification = self.test_player_71.verify_password('I_remembered_it')
         self.assertIs(verification, False)
+

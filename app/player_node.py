@@ -41,3 +41,4 @@ class PlayerNode:
     @previous.setter
     def previous(self, player_node: PlayerNode):
         self._previous = player_node
+
