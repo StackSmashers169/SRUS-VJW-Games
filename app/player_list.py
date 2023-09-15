@@ -3,6 +3,7 @@ from app.player_node import PlayerNode
 
 
 class PlayerList:
+    # a player list holds a list of a player nodes
     def __init__(self, player_list: List[Any] = None):
         self.head: Optional[PlayerNode] = None
         self.tail: Optional[PlayerNode] = None
@@ -13,33 +14,33 @@ class PlayerList:
 
     def append_head(self, player_node: PlayerNode):
 
-        """set new player node as new head and tail if list is empty"""
+        # set new player node as new head and tail if list is empty
         if self.head is None:
             self.head = player_node
             self.tail = player_node
             player_node.previous = None
         else:
-            """ make new_player_node.next point to current head, the current head previous point to
-             new node and then make self.head point to the new node."""
+            # make new_player_node.next point to current head, the current head previous point to
+            # new node and then make self.head point to the new node
             player_node.next = self.head
             self.head.previous = player_node
             self.head = player_node
 
     def append_tail(self, player_node: PlayerNode):
 
-        """if linked list is empty, then set head and tail as new player node"""
+        # if linked list is empty, then set head and tail as new player node"""
         if self.head is None:
             self.append_head(player_node)
 
         else:
-            """make new_player_node.next point to current tail, the current head next is none"""
+            # make new_player_node.next point to current tail, the current head next is none"""
             player_node.previous = self.tail
             self.tail.next = player_node
             self.tail = player_node
 
     def remove_head(self):
-        """removes head of the linked list and returns removed node
-        if head is empty then raise empty list exception"""
+        # removes head of the linked list and returns removed node
+        # if head is empty then raise empty list exception
 
         if self.head is None:
             raise IndexError("List is empty")
@@ -54,7 +55,7 @@ class PlayerList:
         return removed_node
 
     def remove_tail(self):
-        """removes tail and returns removed tail.  If tail is empty then raise empty list exception"""
+        # removes tail and returns removed tail.  If tail is empty then raise empty list exception
         if self.head is None:
             raise IndexError("List is empty")
 
@@ -69,10 +70,9 @@ class PlayerList:
         return removed_node
 
     def remove_specific_node(self, key: str):
-        """
-        removes a player from the list by key and then returns the node that was removed
-        :param key: str - the id of the player we want to remove from the list.
-        """
+
+        # removes a player from the list by key and then returns the node that was removed
+        # :param key: str - the id of the player we want to remove from the list.
 
         if self.head is None:
             raise IndexError("List is empty")
@@ -95,10 +95,11 @@ class PlayerList:
 
             current_player = current_player.next
 
-        """if we reached here, then that means no key was found"""
+        # if we reached here, then that means no key was found
         return None
 
     def display(self, forward=True):
+        # displays the list of nodes currently in the player list
         if forward:
             current_node = self.head
             while current_node is not None:

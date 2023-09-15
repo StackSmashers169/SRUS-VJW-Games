@@ -24,10 +24,13 @@ class Player:
     # both methods below use the pypi package argon2, this package was installed using the command:
     # python -Im pip install argon2-cffi
     def add_password(self, password: str):
+        # takes a plaintext string and converts it into a hash using argon2's built in hash() function.
         hasher = PasswordHasher()
         self._hashed_password = hasher.hash(password)
 
     def verify_password(self, password: str):
+        # takes a plaintext string and then verifies it by attempting to create a hash that matches the
+        # current instance of this player's stored "hashed" password.
         hasher = PasswordHasher()
         try:
             hasher.verify(self._hashed_password, password)

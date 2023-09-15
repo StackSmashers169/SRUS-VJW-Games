@@ -6,9 +6,9 @@ from app.player_node import PlayerNode
 def main():
 
     # create a player object then create node for that player
-    new_player_101 = Player('101', 'Soren')
-    new_player_102 = Player('102', 'Lars')
-    new_player_103 = Player('103', 'Kris')
+    new_player_101 = Player('101', 'Soren', 'ez_2_hack')
+    new_player_102 = Player('102', 'Lars', 'hard_2_hack')
+    new_player_103 = Player('103', 'Kris', 'has_already_been_hacked')
 
     player_node_101 = PlayerNode(new_player_101)
     player_node_102 = PlayerNode(new_player_102)

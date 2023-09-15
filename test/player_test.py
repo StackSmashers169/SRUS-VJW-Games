@@ -26,11 +26,8 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(test_player_name, 'Soren')
 
     def test_create_node(self):
-        test_player = Player('101', 'Bryden')
-        test_player_node = PlayerNode(test_player)
-
-        key = test_player_node.next
-        self.assertEqual(key, None)
+        key = self.test_node_101.next
+        self.assertIsNone(key)
 
     def test_append_node(self):
         """tests appending node at head and tail"""
