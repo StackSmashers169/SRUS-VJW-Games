@@ -8,15 +8,18 @@ class Player:
         self._player_name = player_name
         self.password = password
         self._hashed_password = ''
+        self._score = 0
         self.add_password(self.password)
 
     def __str__(self):
         return f'Player name: {self.player_name}, Player UID: {self.key}'
 
+    # returns the key(ID) of the current player
     @property
     def key(self):
         return self._key
 
+    # returns the name of the current player.
     @property
     def player_name(self):
         return self._player_name
@@ -37,3 +40,4 @@ class Player:
             return True
         except argon2.exceptions.VerifyMismatchError:
             return False
+

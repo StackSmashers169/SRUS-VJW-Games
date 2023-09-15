@@ -12,14 +12,17 @@ class PlayerNode:
     def __str__(self):
         return f'Current player name: {self.player_name}, ID: {self.key}'
 
+    # obtains the name of the player associated with this node
     @property
     def player_name(self):
         return self._player.player_name
 
+    # obtains reference to next node
     @property
     def next(self):
         return self._next
 
+    # obtains reference to previous node
     @property
     def previous(self):
         return self._previous
