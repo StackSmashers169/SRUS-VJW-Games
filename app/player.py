@@ -87,7 +87,6 @@ class Player:
         Player.td_merge(player_list, start, mid, end)
 
     @staticmethod
-
     def td_merge(player_list: list, start: int, mid: int, end: int):
         # param: player_list type any (preferably object type Player), start(int) - start of the section
         # mid(int) - used to calculate left and right run lengths, end(int) - end of the section.
