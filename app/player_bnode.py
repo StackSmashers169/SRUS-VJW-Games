@@ -3,7 +3,7 @@ from typing import Optional
 from app.player import Player
 
 
-class PlayerBnode:
+class PlayerBNode:
     def __init__(self, player: Player):
         self._player = player
         self._left = None
