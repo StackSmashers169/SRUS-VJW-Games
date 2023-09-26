@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import Optional
+from typing import Optional, Any
 from app.player import Player
 
 
@@ -11,6 +11,8 @@ class PlayerBNode:
 
     def __str__(self):
         return f'Current player name: {self.player_name}, ID: {self.key}'
+
+    # comparison operator for names that are equal.
 
     @property
     def player_name(self):
@@ -29,10 +31,11 @@ class PlayerBNode:
         return self._right
 
     @left.setter
-    def left(self, player_bnode: PlayerBnode):
+    def left(self, player_bnode: PlayerBNode):
         self._left = player_bnode
 
     @right.setter
-    def right(self, player_bnode: PlayerBnode):
+    def right(self, player_bnode: PlayerBNode):
         self._right = player_bnode
+
 
