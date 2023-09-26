@@ -9,7 +9,12 @@ class PlayerBST:
 
     def insert_leaf(self, player: Player, root: PlayerBNode = None):
         key = player.player_name
-        new_player_b_node = PlayerBNode(player)
+        record = []
+        if self.check_duplicate(record, key):
+            print("This name is already taken, please enter another name")
+            player.player_name = input()
+
+        new_player_b_node = PlayerBNode(key)
 
         if root is None:
             self._root = new_player_b_node
@@ -21,6 +26,16 @@ class PlayerBST:
             root.right = self.insert_leaf(player, root.right)
 
         return root
+
+    def check_duplicate(self, record: list, player_name: str):
+        if not record:
+            return False
+
+        for index in record:
+            if record[index] == player_name:
+                return True
+
+        return False
 
     @property
     def root(self):

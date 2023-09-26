@@ -44,6 +44,10 @@ class Player:
     def player_name(self):
         return self._player_name
 
+    @player_name.setter
+    def player_name(self, player_name: str):
+        self._player_name = player_name
+
     # returns the score of the current player
     @property
     def score(self):
