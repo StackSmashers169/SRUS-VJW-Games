@@ -34,7 +34,18 @@ class Player:
 
         return False
 
+    def __lt__(self, other: Any) -> bool:
+        if isinstance(other, Player):
+            return self._player_name < other.player_name
+        return False
+
+    def __gt__(self, other: Any) -> bool:
+        if isinstance(other, Player):
+            return self._player_name > other.player_name
+        return False
+
     # returns the key(ID) of the current player
+
     @property
     def key(self):
         return self._key
@@ -74,7 +85,6 @@ class Player:
             return True
         except argon2.exceptions.VerifyMismatchError:
             return False
-
 
     @staticmethod
     def divide_list(player_list: list, start: int, end: int):

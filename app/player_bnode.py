@@ -10,17 +10,13 @@ class PlayerBNode:
         self._right = None
 
     def __str__(self):
-        return f'Current player name: {self.player_name}, ID: {self.key}'
+        return f'Current player name: {self.player.player_name}, ID: {self.player.key}'
 
-    # comparison operator for names that are equal.
-
-    @property
-    def player_name(self):
-        return self._player.player_name
+    # comparison operator magic methods for less than and greater than.
 
     @property
-    def key(self):
-        return self._player.key
+    def player(self):
+        return self._player
 
     @property
     def left(self):

@@ -36,3 +36,27 @@ class TestBST(unittest.TestCase):
         right_node = self.test_tree.root.right
         self.assertEqual(self.test_player_14.player_name, right_node.player_name)
 
+    def test_search_pass(self):
+        root = self.test_tree.insert_leaf(self.test_player_14)
+        self.test_tree.insert_leaf(self.test_player_101, root)
+        self.test_tree.insert_leaf(self.test_player_71, root)
+        self.test_tree.insert_leaf(self.test_player_86, root)
+        self.test_tree.insert_leaf(self.test_player_93, root)
+        self.test_tree.insert_leaf(self.test_player_37, root)
+
+        found_node = self.test_tree.search_tree(root, 'Gladston')
+        # search the tree
+        self.assertEqual(found_node.player_name, 'Gladston')
+
+    def test_search_fail(self):
+        root = self.test_tree.insert_leaf(self.test_player_14)
+        self.test_tree.insert_leaf(self.test_player_101, root)
+        self.test_tree.insert_leaf(self.test_player_71, root)
+        self.test_tree.insert_leaf(self.test_player_86, root)
+        self.test_tree.insert_leaf(self.test_player_93, root)
+        self.test_tree.insert_leaf(self.test_player_37, root)
+
+        self.assertIsNone(self.test_tree.search_tree(root, 'None'))
+
+
+
