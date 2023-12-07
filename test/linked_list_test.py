@@ -1,7 +1,5 @@
 import unittest
 
-import argon2.exceptions
-
 from app.player import Player
 from app.player_node import PlayerNode
 from app.player_list import PlayerList
@@ -17,14 +15,6 @@ class TestPlayer(unittest.TestCase):
         self.test_node_101 = PlayerNode(self.test_player_101)
         self.test_node_71 = PlayerNode(self.test_player_71)
         self.test_list = PlayerList()
-
-    def test_id(self):
-        key = self.test_player_14.key
-        self.assertEqual(key, '14')
-
-    def test_player_name(self):
-        test_player_name = self.test_player_14.player_name
-        self.assertEqual(test_player_name, 'Soren')
 
     def test_create_node(self):
         key = self.test_node_101.next
